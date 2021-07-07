@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<!-- <link rel="" href=" " type="" media=""> -->
+		<title>Table Exercise</title>
+		<style>
+			* {
+				font-family: monospace
+			}
+			
+			table {
+				text-align: center;
+				background-color: black;
+				font-size: 20px;
+				border-collapse: collapse;
+				margin: 0 auto;
+			}
+			
+			tr th {
+				padding: 10px 40px;
+				color: greenyellow;
+				border-left: solid green 5px;
+				border-right: solid green 5px;
+			}
+			
+			tr td {
+				padding: 5px 40px;
+				background-color: greenyellow;
+				border-left: solid green 5px;
+				border-right: solid green 5px;
+			}
+			
+			thead td {
+				padding: 5px 40px;
+				background-color: greenyellow;
+				border: solid green 5px;
+			}
+				
+			tfoot td {
+				padding: 5px 40px;
+				background-color: greenyellow;
+				font-size: 15px;
+				border: solid green 5px;
+			}
+			
+			.hoverStyle:hover {
+				color: red;
+				transition: transform .2s;
+				transform: scale(1.05);
+			}
+		</style>
+	</head>
+        
+	<body>
+		<div>
+			<table>				
+				<thead>
+					<td colspan="4">
+						Personal Data and Contact
+					</td>
+				</thead>
+					
+				<tbody>	
+					<tr>
+						<th>First Name</th>
+						<th>Middle Name</th>
+						<th>Last Name</th>
+						<th>E-Mail</th>
+					</tr>
+
+					<tr class="hoverStyle">
+						<td>John</td>
+						<td>Doe</td>
+						<td>Smith</td>
+						<td>johndoesmith@hotmail.com</td>
+					</tr>
+
+					<tr class="hoverStyle">
+						<td>Michael</td>
+						<td>Dirk</td>
+						<td>Bufett</td>
+						<td>mdbufett@gmail.com</td>
+					</tr>
+
+
+					<tr class="hoverStyle">
+						<td>Eleonor</td>
+						<td>Marie</td>
+						<td>Curie</td>
+						<td>emcsquared@yahoo.com</td>
+					</tr>
+
+
+					<tr class="hoverStyle">
+						<td>Forterra</td>
+						<td>Nord</td>
+						<td>Hannibal</td>
+						<td>fh420@gmail.com</td>
+					</tr>
+
+					<tr class="hoverStyle">
+						<td>Ollieson</td>
+						<td>Trudy</td>
+						<td>Malachite</td>
+						<td>otmalachite@hotmail.com</td>
+					</tr>
+
+					<tr class="hoverStyle">
+						<td>Lavander</td>
+						<td>Kirk</td>
+						<td>Porter</td>
+						<td>lkporter@yahoo.com</td>
+					</tr>
+				</tbody>
+				
+				<tfoot>
+					<td colspan="4">
+						Disclaimer: The following data are fictional and for educational purposes only
+					</td>
+				</tfoot>
+			</table>
+		</div>
+	</body>
+	
+</html>

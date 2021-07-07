@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+        <link rel="stylesheet" href="formsStyle.css" type="text/css" media="screen">
+        
+<!-- Other Meta Tags:
+        <meta http-equiv="refresh" content="60">
+        <meta name="description" content="Page Description">
+        <meta name="author" content="(refresh time in sec); URL='site url"/>
+        <meta name="keywords" content=""> 
+        <meta name="theme-color" content="">
+        <meta property="og:title" content""> - go to facebook for developers
+        <base href="website"z>
+        <base target="_blank">
+-->
+        <title>Page Title</title>
+    </head>
+    
+
+<body>
+	<form id="idName" method="post for not posting data in url/get for posting the data in url" action="valid url where the form will be submitted" name="elementName">
+    <!-- Send forms on HTTPS sites for encryption purposes-->
+    
+    <!-- 
+        You can use 'pattern="[A-Za-z 0-99(letters or number)] {10/2 exact number of input}"
+    -->
+    
+    <!-- 
+        You can use 'required' attribute to require fields need to have input
+        Putting 'required' requires also putting 'aria-required' for accessibility
+    -->
+    
+    <!-- 
+        You can use 'disabled' attribute means no data will be entered
+    -->
+    
+    <!-- 
+        You can use 'readonly' attribute means data shown will not be edited but it will be submitted
+    -->
+    
+    <!-- 
+        You can use 'hidden' attribute means no data will be shown but the data will be submmitted. Commonly for tracking codes
+    -->
+    
+    
+    <label for="elementName">TEXTBOX</label>
+    <input type="text" id="idName" name="elementName" placeholder="placeholder">
+        
+    <label for="elementName">EMAIL</label>
+    <input type="email" id="idName" name="elementName" placeholder="placeholder">
+    
+    <label for="elementName">URL</label>
+    <input type="url" id="idName" name="elementName" placeholder="placeholder">
+    
+    <label for="elementName">NUMBER</label>
+    <input type="number" id="idName" name="elementName" min="" max="" step="" placeholder="placeholder">
+    
+    <label for="elementName">DATE</label>
+    <input type="date" id="idName" name="elementName" min="" max="" step="">
+        
+    <label for="elementName">WEEK</label>
+    <input type="week" id="idName" name="elementName" min="" max="" step="">
+    
+    <label for="elementName">MONTH</label>
+    <input type="month" id="idName" name="elementName" min="" max="" step="">
+        
+    <label for="elementName">TIME</label>
+    <input type="time" id="idName" name="elementName" min="" max="" step="" placeholder="placeholder">
+        
+    <label for="elementName">TELEPHONE</label>
+    <input type="tel" id="idName" name="elementName" min="" max="" step="" placeholder="placeholder">
+
+    <fieldset>
+        <legend>CHECKBOX</legend>
+        <label for="elementName">CHECKBOX1</label>
+        <input type="checkbox" id="idName" name="elementName" value="checkbox1">
+        <label for="elementName">CHECKBOX2</label>
+        <input type="checkbox" id="idName" name="elementName" value="checkbox2">
+        <label for="elementName">CHECKBOX3</label>
+        <input type="checkbox" id="idName" name="elementName" value="checkbox3">
+    </fieldset>
+    <!-- You can place <labe> before or after the checkbox-->
+    <!-- You can set default checked by using 'checked' attribut-->
+    
+    <fieldset>
+        <legend>RADIO BUTTON</legend>
+        <label for="elementName">RADIO BUTTON1</label>
+        <input type="radio" id="idName" name="elementName" value="radio1"><br>
+        <label for="elementName">RADIO BUTTON2</label>
+        <input type="radio" id="idName" name="elementName" value="radio1"><br>
+        <label for="elementName">RADIO BUTTON3</label>
+        <input type="radio" id="idName" name="elementName" value="radio1"><br>
+    </fieldset>
+    <!-- You can place <label> before or after the buttons-->
+    <!-- You can set default checked by using 'checked' attribut-->
+   
+    <label for="idName">SELECT</label>
+    <select name="elementName">
+        <optgroup label="Option Group1">
+        <option value="option1">option1</option>
+        <option value="option2">option2</option>
+        <option value="option3">option3</option>
+        <option value="option4">option4</option>
+        <option value="option5">option5</option>
+        </optgroup>
+        
+        <optgroup label="Option Group2">
+        <option value="option6">option6</option>
+        <option value="option7">option7</option>
+        <option value="option8">option8</option>
+        <option value="option9">option9</option>
+        <option value="option10">option10</option>
+        </optgroup>
+    </select>
+    <!-- You can use 'multiple' attribute to choose multiple options--> 
+        
+    <label for="elementName">TEXT AREA</label><br>
+    <textarea id="idName" name="elementName" placeholder="placeholder"></textarea>
+    
+    <label for="elementName">COLOR</label>
+    <input type="color" id="idName" name="elementName">
+    
+    <label for="elementName">FILE</label>
+    <input type="file" id="idName" name="elementName" accept="application/*">
+    <!-- You can use 'multiple' attribute to upload multiple files-->
+    <!-- You can use 'accept="filetype/*"' attribute to upload specific file types-->
+        
+    <label for="elementName">PASSWORD</label>
+    <input type="password" id="idName" name="elementName" placeholder="placeholder">
+        
+    <label for="elementName">HIDDEN TO USERS SENT TO SERVER</label>
+    <input type="hidden" value="value" name="forTracking">
+    
+    <label for="elementName">RANGE</label>
+    <input type="range" id="idName" name="elementName" min="0" max="10" step="1">
+    
+    <label for="elementName">SEARCH</label>
+    <input type="search" id="idName" name="elementName" placeholder="placeholder">
+        
+    <hr>
+    <input type="submit" value="submit label"><br><br>
+        
+    <input type="reset" value="reset label"><br><br>
+        
+    <input type="button" value="custom button"><br><br>
+        
+    <!-- BUTTONS-->
+        
+    <button type="submit">Submit Button Tag</button><br><br>
+        
+    <button type="reset">Reset Button Tag</button><br><br>
+        
+    <button type="button">Custom Button Tag</button><br><br>
+        
+    <!--IMAGE BUTTON-->
+    <input type="image" src="submit-button.jpg" alt="submit button" width="200px" height="200px">
+        
+    </form>
+</body>
+</html>

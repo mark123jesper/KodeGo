@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+      <title>Registration Form</title>
+			<style>
+				* {
+					font-family: monospace;
+					font-size: 20px;
+					background-color: black;
+					color: greenyellow;
+				}
+				
+				.fieldsetOne {
+					margin-top: 50px;
+					width: 200px;
+					margin-left: auto;
+					margin-right: auto;
+					margin-bottom: 20px;
+					text-align: center;
+				}
+				
+				input[type="text"] {
+					width: 300px;
+					margin-top: 15px;
+					margin-bottom: 15px;
+					height: 20px;
+					width: 100%;
+					border: 2px solid gray; 
+					background: none;
+					position: relative;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					padding: 8px 12px;
+					outline: 0;
+				}
+				
+				textarea {
+					min-height: 60px;
+					min-width: 400px;
+					width: 100%;
+					border: 2px solid gray; 
+					background: none;
+					position: relative;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					padding: 8px 12px;
+					outline: 0;
+				}
+				
+				input[type="checkbox"], input[type="radio"] {
+					margin: 8px 0 ;
+				}
+				
+				div h1 {
+					text-align: center;
+					margin-top: 50px;
+					font-size: 40px
+					
+				}
+				form {
+					background-color: g
+				}
+				
+				fieldset div {
+					display: inline-block;
+					text-align: right;
+					margin: auto;
+				}
+				
+				form > div {
+					margin-top: 50px;
+					text-align: center;
+				}
+				
+				select {
+					margin-top: 10px;
+				}
+				
+				div button {
+					margin-bottom: 30px;
+				}
+				
+				button:hover {
+					background-color: green;
+				}
+/*Experiment Style with copied code snippets on net haha*/
+				
+			</style>
+  </head>
+	
+	<body>
+		<div>
+			<h1>'Ye who enter shall leave all hope...</h1>
+		</div>
+		
+		<form>
+			<table class="fieldsetOne">
+	<!--			for first name-->
+				<tr>
+					<td>
+						<label for="fName">First Name</label>
+						<input type="text" id="fName" name="firstName" placeholder="First Name" required>
+					</td>
+				</tr>
+
+	<!--			for middle name-->
+				<tr>
+					<td>
+						<label for="mName">Middle Name</label>
+						<input type="text" id="mName" name="middleName" placeholder="Middle Name" required>
+					</td>
+				</tr>
+
+	<!--			for last name-->
+				<tr>
+					<td>
+						<label for="lName">Last Name</label>
+						<input type="text" id="lName" name="lastName" placeholder="Last Name" required>
+					</td>
+				</tr>
+				<br>
+
+	<!--			for address-->
+				<tr>
+
+					<td>
+						Address<br><textarea id="address" name="address" placeholder="Your Home Address" cols=50 required></textarea>
+					</td>
+				</tr>
+			</table>
+			
+			<fieldset class=fieldsetOne>
+					<legend>Gender</legend>
+					<div>
+						<label for="genderMale">Male</label>
+						<input type="radio" id="genderMale" name="gender" value="genderMale" required>
+					<br>
+						<label for="genderFemale">Female</label>
+						<input type="radio" id="genderFemale" name="gender" value="genderFemale" required>
+					</div>
+			</fieldset>
+			
+
+			<div>
+			<label for="careerPath">Select your Career Path:</label>
+				<br>
+			<select name="careerPath">
+				<optgroup label="Career Path Options">
+					<option value="frontEnd">Front End</option>
+					<option value="backEnd">Back End</option>
+					<option value="fullStack">Full Stack</option>
+				</optgroup>
+			</select>
+			</div>
+
+			<fieldset class="fieldsetOne">
+					<legend>Technical Skills</legend>
+				
+					<div>
+						HTML
+						<input type="checkbox" id="htmlOption" name="htmlOption" value="htmlOption">
+						<br>
+						CSS
+						<input type="checkbox" id="cssOption" name="cssOption" value="cssOption">
+						<br>
+						Javascript
+						<input type="checkbox" id="jsOption" name="jsOption" value="jsOption">
+						<br>
+						MySQL
+						<input type="checkbox" id="mysqlOption" name="mysqlOption" value="mysqlOption">
+						<br>
+						PHP
+						<input type="checkbox" id="phpOption" name="phpOption" value="phpOption">
+						<br>
+						Laravel
+						<input type="checkbox" id="laravelOption" name="laravelOption" value="laravelOption">
+						<br>
+						React.js
+						<input type="checkbox" id="reactOption" name="reactOption" value="reactOption">
+						<br>
+						Python
+						<input type="checkbox" id="pythonOption" name="pythonOption" value="pythonOption">
+					</div>
+			</fieldset>
+			
+			<div>
+				<button type="reset">Reset</button>
+				<button type="submit">Submit</button>
+			</div>
+		</form>
+	</body>
+	
+</html>
