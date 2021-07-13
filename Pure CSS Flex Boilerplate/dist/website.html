@@ -1,0 +1,152 @@
+
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- <link rel="" href=" " type="" media=""> -->
+    <title>Table Exercise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header {
+            height: auto;
+            flex: 1 0 100%;
+        }
+
+        section {
+            flex: 1 0 49%;
+            margin: 5px;
+        }
+
+        table {
+            width: 100%;
+            padding: 10px;
+            border-collapse: collapse;
+        }
+
+        h1 {    
+            text-align: center;
+        }
+
+        th:not(:first-child),
+        td {
+            text-align: left;
+            padding: 10px;
+        }
+
+        thead th {
+            color: blue;
+        }
+
+        tbody tr:nth-child(odd) {
+            background-color: gray;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<boy>
+    <div class="container">
+        <header>
+            <h1>Table Exercise</h1>
+        </header>
+        <section>
+            <table class="tablecontainer">
+                <thead>
+                    <tr>
+                        <th colspan="4">Name of Male Participants</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+
+                    <tr>
+                        <td>Juan</td>
+                        <td>Santos</td>
+                        <td>Dela Cruz</td>
+                        <td>20</td>
+                    </tr>
+
+                    <tr>
+                        <td>Jose</td>
+                        <td>Salazar</td>
+                        <td>Reyes</td>
+                        <td>25</td>
+                    </tr>
+
+                    <tr>
+                        <td>Luis</td>
+                        <td>Rizal</td>
+                        <td>Bonifacio</td>
+                        <td>21</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="4">Name of Female Participants</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Middle Name</th>
+                        <th>Last Name</th>
+                        <th>Age</th>
+                    </tr>
+
+                    <tr>
+                        <td>Eva</td>
+                        <td>Roa</td>
+                        <td>Luna</td>
+                        <td>23</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lulu</td>
+                        <td>Sy</td>
+                        <td>Tang</td>
+                        <td>18</td>
+                    </tr>
+
+                    <tr>
+                        <td>Lena</td>
+                        <td>Aquino</td>
+                        <td>Santos</td>
+                        <td>30</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </div>
+</boy>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- <link rel="" href=" " type="" media=""> -->
+    <title>CSS Holy Grail Boilerplate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header {
+            flex: 1 0 100%;
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 50px;
+        }
+
+        main {
+            flex: 1 0 100%;
+            background-color: white;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        main div {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        main section{
+            flex: 1 0 20%;
+            height:100%;
+            margin-left: 10px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            border: 1px solid lightgray;
+        }
+
+        main img {
+            max-width: 100%;
+        }
+
+        main figcaption{
+            width: 210px;
+            margin: 0 auto;
+        }
+
+        
+
+        @media all and (max-width: 950px) {
+            header h1 {
+                font-size: 40px;
+            }
+            
+            nav {
+            }
+
+            main {
+            }
+
+            main section {
+                flex: 1 0 40%;
+            }
+
+            aside {
+            }
+
+            footer {
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+            nav {
+            }
+
+            main {
+            }
+
+            aside {
+            }
+        }
+    </style>
+</head>
+
+<boy>
+    <div class="container">
+        <header>
+            <h1>TRAVEL GALLERY</h1>
+        </header>
+
+        <main>
+            <div>
+                <section>
+                    <figure>
+                        <img src="https://i.pinimg.com/originals/c3/39/a2/c339a2b62761581e8218988a5b33ea34.jpg">
+                        <figcaption>Add a description of the image here</figcaption>
+                    </figure>
+                </section>
+                <section>
+                    <figure>
+                        <img src="https://i.pinimg.com/originals/c3/39/a2/c339a2b62761581e8218988a5b33ea34.jpg">
+                        <figcaption>Add a description of the image here</figcaption>
+                    </figure>
+                </section>
+                <section>
+                    <figure>
+                        <img src="https://i.pinimg.com/originals/c3/39/a2/c339a2b62761581e8218988a5b33ea34.jpg">
+                        <figcaption>Add a description of the image here</figcaption>
+                    </figure>
+                </section>
+                <section>
+                    <figure>
+                        <img src="https://i.pinimg.com/originals/c3/39/a2/c339a2b62761581e8218988a5b33ea34.jpg">
+                        <figcaption>Add a description of the image here</figcaption>
+                    </figure>
+                </section>
+            </div>
+        </main>
+    </div>
+</boy>

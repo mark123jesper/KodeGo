@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <!-- <link rel="" href=" " type="" media=""> -->
+    <title>CSS Holy Grail Boilerplate</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        header {
+            height: auto;
+            flex: 1 0 100%;
+            background-color: #FF0055;
+            /* COMMENT IF NOT CENTERED */
+            text-align: center;
+            border: solid 1px #000000
+        }
+
+        nav {
+            flex: 1 0 20%;
+            background-color: #00ffee;
+            /* COMMENT IF NOT CENTERED */
+            text-align: center;
+            border: solid 1px #000000
+        }
+
+        main {
+            flex: 1 0 55%;
+            background-color: #00ffee;
+            /* COMMENT IF NOT CENTERED */
+            text-align: center;
+            border: solid 1px #000000
+        }
+
+        main div {
+            display:flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+        }
+
+        main section {
+            flex: 1 0 33.33%;
+            background-color: #0022ee;
+            /* COMMENT IF NOT CENTERED */
+            text-align: center;
+            border: solid 1px #000000;
+        }
+
+        aside {
+            flex: 1 0 25%;
+            background-color: #00ffee;
+            /* COMMENT IF NOT CENTERED */
+            text-align: center;
+            border: solid 1px #000000
+        }
+
+        footer {
+            height: auto;
+            flex: 1 0 100%;
+            background-color: #FF0055;
+            /* COMMENT IF NOT CENTERED */
+            text-align: center;
+            border: solid 1px #000000
+        }
+
+        @media all and (max-width: 768px) {
+            nav {
+                flex: 1 0 100%;
+                order: 1;
+            }
+
+            main {
+                flex: 1 0 65%;
+                order: 2;
+            }
+
+            aside {
+                flex: 1 0 35%;
+                order: 3;
+            }
+
+            footer {
+                order: 4;
+            }
+        }
+
+        @media only screen and (max-width: 420px) {
+            nav {
+                flex: 1 0 100%;
+            }
+
+            main {
+                flex: 1 0 100%;
+            }
+
+            aside {
+                flex: 1 0 100%;
+            }
+        }
+    </style>
+</head>
+
+<boy>
+    <div class="container">
+        <header>
+            <h1>Header</h1>
+        </header>
+
+        <nav>
+            <div>
+                <p>Sidebar Navigation</p>
+            </div>
+        </nav>
+
+        <main>
+            <div>
+                <section>Section 1</section>
+                <section></section>
+                <section>Section 3</section>
+                <section>Section 1</section>
+                <section>Section 2</section>
+                <section>Section 3</section>
+            </div>
+        </main>
+
+
+
+        <aside>
+            <p>Sidebar Article</p>
+        </aside>
+
+        <footer>
+            <h1>Footer</h1>
+        </footer>
+    </div>
+</boy>

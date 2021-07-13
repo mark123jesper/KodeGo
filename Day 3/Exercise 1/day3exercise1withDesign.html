@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+		<!-- <link rel="" href=" " type="" media=""> -->
+		<title>My First HTML Page</title>
+		<style>
+			
+/*			ALL BODY ELEMENTS*/
+			* {
+				margin: 0;
+				font-family: monospace;
+				font-size: 40px
+			}
+			
+/*			ALL TABLE */
+			.tableStyle {
+				background-color: black;
+				border-style: none;
+				text-align: center;
+				margin: 0 auto;
+				width: 100%;
+				border-collapse: collapse;
+			}
+			
+			.headerStyle {
+				color: greenyellow;
+				height: 190px;
+			}
+			
+			.navStyle {
+				background-color: greenyellow;
+				height: 190px;
+			}
+			
+			tbody td:nth-child(1) {
+				background-color: black;
+				color:greenyellow;
+				width: 25%;
+				height: 190px;
+			}
+			
+			tbody td:nth-child(2) {
+				background-color: darkgreen;
+				color: greenyellow;
+				width: 75%;
+				height: 190px;
+			}
+			
+			.footerStyle {
+				background-color: greenyellow;
+				height: 190px;
+			}
+			
+			
+/*			ALL DIV */
+			.divGrid {
+				display: grid;
+				width: 100%;
+  			grid-gap: 0;
+				text-align: center;
+				height: 800px;
+			}
+			
+			.gridItem1 {
+				grid-row-start: 1;
+				grid-row-end: 2;
+				grid-column-start: 1;
+				grid-column-end: 5;
+				background-color: black;
+				color: greenyellow;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.gridItem2 {
+				grid-row-start: 2;
+				grid-row-end: 3;
+				grid-column-start: 1;
+				grid-column-end: 5;
+				background-color: greenyellow;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.gridItem3 {
+				grid-row-start: 3;
+				grid-row-end: 4;
+				grid-column-start: 1;
+				grid-column-end: 2;
+				background-color: black;
+				color: greenyellow;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.gridItem4 {
+				grid-row-start: 3;
+				grid-row-end: 4;
+				grid-column-start: 2;
+				grid-column-end: 5;
+				background-color: darkgreen;
+				color: greenyellow;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+			.gridItem5 {
+				grid-row-start: 4;
+				grid-row-end: 5;
+				grid-column-start: 1;
+				grid-column-end: 5;
+				background-color: greenyellow;
+				color: black;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			
+		</style>
+	</head>
+        
+	
+	<body>
+		TABLEEEEEEEZZZZZZZZ
+<!--		FOR TABLE HTML LAYOUT-->
+		<table class="tableStyle">
+        <thead>
+          <tr class="headerStyle">
+						<td colspan="2">
+              <h1>Header Bar</h1>
+            </td>
+					</tr>
+					<tr class="navStyle">
+						<td colspan="2">
+							<h1>Navigation Bar</h1>
+						</td>
+					</tr>
+				</thead>
+				
+			
+				<tbody>
+					<tr class="indexStyle">
+						<td>
+							<h1>Index</h1>
+						</td>
+						<td>
+							<h1>Content Section</h1>
+						</td>
+					</tr>
+				</tbody>
+			
+				<tfoot>	
+					<tr class="footerStyle">
+						<td colspan="2">
+							<h1>Footer bar</h1>
+						</td>
+					</tr>
+				</tfoot>
+    </table>
+		<br>
+		
+		DIIIIIIIIIVZZZZZZZZZZ
+<!--		FOR DIV HTML LAYOUT-->
+		<div class="divGrid">
+        <div class="gridItem1">
+        	<h1>Header Bar</h1>
+        </div>
+			
+				<div class="gridItem2">
+        	<h1>Navigation Bar</h1>
+        </div>
+			
+        <div class="gridItem3">
+         <h1>Index</h1>
+				</div>
+			
+        <div class="gridItem4">
+          <h1>Content Section</h1>
+        </div>
+        
+        <div class="gridItem5">
+        	<h1>Footer Bar</h1>
+        </div>
+    </div>
+		
+	</body>
+	
+	
+</html>
