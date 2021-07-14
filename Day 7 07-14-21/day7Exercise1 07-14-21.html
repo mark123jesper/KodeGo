@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Page Title</title>
+	<style>
+		* {
+			box-sizing: border-box;
+			padding: 0;
+		}
+
+		body {
+			margin: 0;
+			text-align: center;
+		}
+
+		header,
+		footer {
+			background-color: yellowgreen;
+			height: 20vh;
+		}
+
+		header,
+		footer,
+		aside,
+		nav,
+		article {
+			padding: 30px;
+		}
+
+		.container {
+			display: flex;
+			flex-wrap: wrap;
+			height: 60vh;
+		}
+
+		.container>nav,
+		.container>aside {
+			background-color: beige;
+			flex: 1;
+		}
+
+		.container>nav {
+			order: -1;
+		}
+
+		.container>article {
+			flex: 3;
+		}
+
+		@media screen and (max-width:675px) {
+			.container {
+				flex-direction: column;
+			}
+	</style>
+</head>
+
+<body>
+	<header>Header</header>
+
+
+	<div class="container">
+		<nav>Navigation</nav>
+		<article>Article</article>
+		<aside>Aside</aside>
+	</div>
+
+	<footer>Footer</footer>
+</body>
+
+</html>

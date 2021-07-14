@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            height: 100vh;
+        }
+
+        .master-container {
+            width: 100%;
+            display: flex;
+        }
+
+        nav {
+            background-color: #d7e804;
+            flex: 1;
+            height: 100vh
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            flex: 5;
+            height: 100vh;
+        }
+
+        nav,
+        header,
+        article,
+        aside,
+        footer {
+            text-align: center;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+
+        header,
+        footer {
+            height: 20vh;
+            background-color: yellowgreen;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: row;
+            height: 55.5vh;
+        }
+
+        article {
+            flex: 3
+        }
+
+        aside {
+            flex: 1;
+            background-color: green;
+        }
+
+        @media (max-width: 874px) {
+
+            .main-container {
+                flex-direction: column;
+            }
+
+            .master-container {
+                flex-direction: column;
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="master-container">
+        <nav>Navigation</nav>
+
+        <div class="container">
+            <header>Header</header>
+
+            <div class="main-container">
+                <article>Article</article>
+                <aside>Aside<aside>
+            </div>
+
+            <footer>Footer<footer>
+        </div>
+    </div>
+</body>
+
+</html>
