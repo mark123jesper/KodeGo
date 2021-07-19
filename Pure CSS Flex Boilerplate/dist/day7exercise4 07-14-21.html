@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            color: #666;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 60%;
+        }
+
+        aside,
+        nav {
+            flex: 1;
+            padding: 20px;
+        }
+
+        article {
+            flex: 3;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: teal
+        }
+
+        aside {
+            background-color: beige
+        }
+
+        header,
+        footer {
+            background-color: yellowgreen;
+            height: 20vh;
+            width: 100%;
+            padding: 30px;
+        }
+
+        @media (max-width: 874px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+        }
+
+        /* FORM CSS */
+
+        .form-block {
+            display: flex;
+            padding: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-group {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items:flex-end;
+            flex-wrap: wrap;
+            flex: 1 0 50%;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],
+        input[type="datetime-local"],
+        select {
+            height: 50px;
+            width: 220px;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* OPTION GROUP, RADIO, AND CHECKBOX */
+
+        .option group {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            flex: 1 0 50%;
+            background-color: blue;
+        }
+
+        .radio-class, .checkbox-class {
+            display: flex;
+            flex-direction: column;
+            margin: 20px
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-top: 20px;
+        }
+
+        /* SUBMIT BUTTON */
+        .submit-style {
+            flex: 1 0 100%;
+            text-align: center;
+            margin-top: 50px; 
+        }
+
+        /* MEDIA QUERY FOR FORM */
+        @media (max-width: 1520px) {
+
+            .form-block {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+
+    <div class="container">
+        <article>
+            Article
+            <div>
+                <form action="/" class="form-block">
+                    <!-- FORM GROUP -->
+                    <div class="form-group">
+                        <div>
+                            <label>Name</label>
+                            <input type="text" id="name" name="name" placeholder="Enter you Full Name">
+                        </div>
+
+                        <div>
+                            <label for="telephone">Phone</label>
+                            <input type="tel" id="telephone" name="telephone" placeholder="Enter your Number">
+                        </div>
+
+                        <div>
+                            <label>Email</label>
+                            <input type="email" id="mail" name="mail" placeholder="Enter you Emal Address">
+                        </div>
+
+                        <div>
+                            <label>Pick-up Date/Time</label>
+                            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                        </div>
+
+                        <div>
+                            <label>
+                                Pickup Place
+                            </label>
+                            <select>
+                                <option>Option 1</option><br>
+                                <option>Option 2</option><br>
+                                <option>Option 3</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label>Dropoff Place</label>
+                            <input type="text" id="dropoff" name="dropoff"
+                                placeholder="Enter your Preferred Dropoff Place">
+                        </div>
+                    </div>
+
+                    <!-- RADIO AND CHECKBOX GROUP -->
+                    <div class="option-group">
+                        <fieldset class="radio-class">
+                            <legend>Which Vehicle do you require?</legend>
+                            <label for="radio1"><input type="radio" id="radio1" name="vehicle">Van</label>
+                            <label for="radio2"><input type="radio" id="radio2" name="vehicle">Jeepney</label>
+                            <label for="radio3"><input type="radio" id="radio3" name="vehicle">Trycicle</label>
+                        </fieldset>
+
+                        <fieldset class="checkbox-class">
+                            <legend>Extras</legend>
+                            <label for="elementName"><input type="checkbox" id="checkbox1" name="extra">Baby
+                                Seat</label>
+                            <label for="elementName"><input type="checkbox" id="checkbox2" name="extra">Weelchair
+                                Access</label>
+                            <label for="elementName"><input type="checkbox" id="checkbox3" name="extra">Stock
+                                Tip</label>
+                        </fieldset>
+                    </div>
+
+                    <!-- SUBMIT BUTTON -->
+                    <div class="submit-style">
+                        <input type="submit" value="Submit Order">
+                    </div>
+                </form>
+            </div>
+        </article>
+        <aside>Aside</aside>
+        <nav>Navigation</nav>
+    </div>
+
+    <footer>Footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Page Title</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            outline: none;
+            font-family: Roboto, Arial, sans-serif;
+            color: #666;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            height: 60%;
+        }
+
+        aside,
+        nav {
+            flex: 1;
+            padding: 20px;
+        }
+
+        article {
+            flex: 3;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: orange
+        }
+
+        aside {
+            background-color: beige
+        }
+
+        header,
+        footer {
+            background-color: yellowgreen;
+            height: 20vh;
+            width: 100%;
+            padding: 30px;
+        }
+
+        @media (max-width: 874px) {
+
+            .container {
+                flex-direction: column;
+            }
+
+        }
+
+        /* FORM CSS */
+
+        .form-container {
+            display: flex;
+            flex-wrap: wrap;
+            height: auto;
+        }
+
+
+        .form-container>div:first-child {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            flex: 1 0 50%;
+        }
+
+        .form-container>div:nth-child(2) {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            flex: 1 0 50%;
+        }
+
+        /*  FIRST COLUMN FORM*/
+        .textgroup {
+            align-items: center;
+            padding: 10px;
+        }
+
+        .textgroup input,
+        .textgroup select {
+            width: 100%;
+            height: 40px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+        }
+
+        /* SECOND COLUMN */
+        .optiongroup {
+            /* align-items: flex-start; */
+            justify-content: flex-start;
+            padding: 10px;
+        }
+
+        .optiongroup li {
+            list-style:none;
+        }
+
+        /* FOR SUBMIT BUTTON */
+        form>div:nth-child(2) {
+            text-align: center;
+        }
+
+        @media (max-width: 504px) {
+
+            .form-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>Header</header>
+
+    <div class="container">
+        <article>
+            Article
+            <form>
+                <div class="form-container">
+                    <div style="background-color:yellowgreen" class="textgroup">
+
+                        <label>Name</label>
+                        <input type="text" id="name" name="name" placeholder="Full Name">
+
+
+
+                        <label for="telephone">Phone</label>
+                        <input type="tel" id="telephone" name="telephone" placeholder="Enter your Number">
+
+
+
+                        <label>Email</label>
+                        <input type="email" id="mail" name="mail" placeholder="Enter you Emal Address">
+
+
+
+                        <label>Pickup Date/Time</label>
+                        <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+
+
+                        <!-- <div>
+                            <label>Pick-up Date/Time</label>
+                            <input type="datetime-local" id="birthdaytime" name="birthdaytime">
+                        </div> -->
+
+
+                        <label>
+                            Pickup Place
+                        </label>
+                        <select>
+                            <option>Option 1</option><br>
+                            <option>Option 2</option><br>
+                            <option>Option 3</option>
+                        </select>
+
+
+
+                        <label>Dropoff Place</label>
+                        <input type="text" id="dropoff" name="dropoff" placeholder="Enter your Preferred Dropoff Place">
+
+                    </div>
+                    <div style="background-color:yellow" class="optiongroup">
+                        <fieldset class="radio-class">
+                            <legend>Which Vehicle do you require?</legend>
+                            <li><label for="radio1"><input type="radio" id="radio1" name="vehicle">Van</label></li>
+                            <li><label for="radio2"><input type="radio" id="radio2" name="vehicle">Jeepney</label></li>
+                            <li><label for="radio3"><input type="radio" id="radio3" name="vehicle">Trycicle</label></li>
+                        </fieldset>
+
+                        <fieldset class="checkbox-class">
+                            <legend>Extras</legend>
+                            <li><label for="elementName"><input type="checkbox" id="checkbox1" name="extra">Baby
+                                    Seat</label></li>
+                            <li><label for="elementName"><input type="checkbox" id="checkbox2" name="extra">Weelchair
+                                    Access</label></li>
+                            <li><label for="elementName"><input type="checkbox" id="checkbox3" name="extra">Stock
+                                    Tip</label></li>
+                        </fieldset>
+                    </div>
+                </div>
+                <div style="background-color:blue">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </article>
+
+        <aside>Aside</aside>
+        <nav>Navigation</nav>
+    </div>
+
+    <footer>Footer</footer>
+</body>
+
+</html>
