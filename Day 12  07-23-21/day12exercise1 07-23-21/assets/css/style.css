@@ -1,0 +1,99 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: black;
+  box-sizing: border-box;
+  font-family: arial;
+  margin: 20px;
+  font-size: 55px;
+}
+
+nav {
+  position: relative;
+  background-color: lightgray;
+  height: 15vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-between;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+}
+
+nav div:first-child {
+  background-color: white;
+  height: 50%;
+  width: 300px;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav div:first-child h1 {
+  font-size: 40px;
+}
+
+nav div:nth-child(2) {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+nav div:nth-child(2) a {
+  font-size: 20px;
+  text-decoration: none;
+}
+
+nav div:nth-child(2) a:hover {
+  text-decoration: underline;
+}
+
+main {
+  margin: 0;
+  display: flex;
+  height: calc(100vh - 30vh - 120px);
+}
+
+main section {
+  flex: 0 1 75%;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+}
+
+main aside {
+  flex: 0 1 25%;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+}
+
+footer {
+  position: relative;
+  height: 15vh;
+  background-color: lightgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-width: 5px;
+  border-color: black;
+}
+
+footer h5 {
+  position: absolute;
+  left: 0;
+  font-size: 20px;
+}

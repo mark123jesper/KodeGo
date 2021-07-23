@@ -1,0 +1,102 @@
+$b-width: 5px;
+$b-color: black;
+$bg-color: lightgray;
+$font-color: black;
+$font-stock: arial;
+
+@mixin universal ($boxSizing: border-box) {
+    padding: 0;
+    margin: 0;
+    color: $font-color;
+    box-sizing: $boxSizing;
+    font-family: $font-stock;
+    
+}
+
+@mixin displayCenter-flex ($display:flex) {
+    display: $display;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin border-primary ($border-style: solid) {
+    border-style: $border-style;
+    border-width: $b-width;
+    border-color: $b-color;
+}
+
+* {
+    @include universal;
+    margin: 20px;
+    font-size: 55px;
+}
+
+nav {
+    position: relative;
+    background-color: $bg-color;
+    height: 15vh;
+    @include displayCenter-flex;
+    justify-content: space-between;
+    @include border-primary;
+
+    div:first-child {
+        background-color: white;
+        height: 50%;
+        width: 300px;
+        @include border-primary;
+        @include displayCenter-flex;
+        
+        h1 {
+            font-size: 40px;
+        }
+    }
+
+    div:nth-child(2) {
+        position: absolute;
+        right: 0;
+        bottom: 0; 
+
+        a {
+            font-size: 20px;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+main {
+    margin: 0;
+    display:flex;
+    height: calc(100vh - 30vh - 120px);
+    
+    section {
+        flex: 0 1 75%;
+        background-color: $bg-color;
+        @include displayCenter-flex;
+        @include border-primary;
+    }
+
+    aside {
+        flex: 0 1 25%;
+        background-color: $bg-color;
+        @include displayCenter-flex;
+        @include border-primary;
+    }
+}
+
+footer {
+    position: relative;
+    height: 15vh;
+    background-color: $bg-color;
+    @include displayCenter-flex;
+    @include border-primary;
+
+    h5 {
+        position: absolute;
+        left: 0;
+        font-size: 20px;
+    }
+}
