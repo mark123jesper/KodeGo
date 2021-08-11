@@ -1,0 +1,202 @@
+// Variable examples 1
+$myColor: blue;
+$space: 10px;
+
+// Class 1
+.wrap p {
+    margin: $space;
+    padding: $space;
+}
+
+.p-border {
+    border: dotted 3px $myColor;
+}
+
+.p-background {
+    background: rgba($myColor, 0.3);
+}
+
+.p-color {
+    color: $myColor;
+}
+
+// Variable example 2
+$bodyColor: lightblue;
+$primaryColor: darkblue;
+$footer: yellow;
+$fontStock: Arial;
+
+// Class 2
+body {
+    background: $bodyColor;
+    font: $fontStock;
+}
+
+.header {
+    color: $primaryColor;
+}
+
+// Nesting
+$fillColor: lightgrey;
+$tr-bgColor: lightgreen;
+
+.sample-nest {
+    p {
+        background: $fillColor;
+
+        a {
+            display: block;
+            padding: 6px 12px;
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    table {
+        border: 2px solid $primaryColor;
+        width: 100%;
+
+        tr {
+            &:nth-child(2n) {
+                background-color: $tr-bgColor;
+                padding: 6px 6px;
+            }
+        }
+
+        th {
+            font: $fontStock;
+            color: $primaryColor;
+            font-size: large;
+        }
+    }
+}
+
+// Nesting 2
+nav {
+    ul {
+        list-style: none;
+        margin: 1px;
+        padding: 1px;
+        border: 2px solid lightsalmon;
+        background-color: lightgreen;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    li {
+        float: left;
+        border-right: 2px solid $primaryColor;
+
+        &:hover {
+            background-color: $fillColor;
+        }
+    }
+
+    a {
+        display: block;
+        padding: 8px 10px;
+        text-decoration: underline;
+
+        &:hover {
+            color: coral;
+            text-decoration: line-through;
+        }
+    }
+}
+
+@mixin headline($color, $size) {
+    color: $color;
+    font-size: $size;
+}
+
+.headlineNews1 {
+    @include headline(green, 3em)
+}
+
+.headlineNews2 {
+    @include headline(blue, 3em)
+}
+
+.headlineNews3 {
+    @include headline(red, 3em)
+}
+
+// MIXIN 2
+$boxStyle1: 5px,
+solid,
+red,
+50%;
+$boxStyle2: (b-style:dotted, b-color: blue, b-width: thick, b-radius:50%);
+
+@mixin boxy($b-width, $b-style, $b-color, $b-radius) {
+    // border-width: $b-width;
+    // border-style: $b-style;
+    // border-color: $b-color;
+    border: $b-width $b-style $b-color;
+    border-radius: $b-radius;
+}
+
+.box1 {
+    @include boxy($boxStyle1...)
+}
+
+.box2 {
+    @include boxy($boxStyle2...)
+}
+
+// if-else Example 
+
+$light: 1px solid black;
+$medium: 3px solid black;
+$heavy: 6px solid black;
+
+@mixin border-stroke($val) {
+
+    @if $val=="light" {
+        border: $light;
+    }
+
+    @else if $val=="medium" {
+        border: $medium;
+    }
+
+    @else if $val=="heavy" {
+        border: $heavy;
+    }
+}
+
+.boxlight {
+    width: 150px;
+    height: 150px;
+    background-color: red;
+    @include border-stroke(light);
+}
+
+.boxmedium {
+    width: 150px;
+    height: 150px;
+    background-color: yellow;
+    @include border-stroke(medium);
+}
+
+.boxheavy {
+    width: 150px;
+    height: 150px;
+    background-color: cyan;
+    @include border-stroke(heavy);
+}
+
+// Each Statement
+
+$themecolors: ("good":pink, "bad":red, "neutral":orange);
+
+@each $t-color, $i in $themecolors {
+
+    .coloring.#{$t-color} {
+        background-color: $i;
+    }
+}

@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* label::before {
+            content: "*";
+            color: red;
+        } */
+    </style>
+</head>
+
+<body>
+    <!-- <form name="form" action="" method="">
+        <label for="username" name="username">Username</label>
+        <input type="text" id="username" name="username">
+        <label for="password" name="password">Password</label>
+        <input type="password" id="password" name="password">
+        <br>
+        <button type="submit" id="submit" name="submit" onclick="return confirm();">Submit</button>
+
+
+        <fieldset>
+            <legend>Radio</legend>
+            <label for="radio" name="radioOptions">Radio 1</label>
+            <input type="radio" id="radio1" name="radio" value="1"><br>
+            <label for="radio" name="radio">Radio 2</label>
+            <input type="radio" id="radio2" name="radio" value="2"><br>
+            <label for="radio" name="radio">Radio 3</label>
+            <input type="radio" id="radio3" name="radio" value="3"><br>
+        </fieldset>
+
+        <input type="checkbox" id="acceptCheckbox" name="acceptCheckbox" value="yes">
+        <label for="accept" id="acceptCheckbox" name="acceptLabelCheckbox">Accept the terms and agreements</label>
+
+        
+    </form> -->
+    <!-- <form name="form">
+        <fieldset name="field">
+            <legend>Check the symptoms you are currently experiencing:</legend>
+            <button type="button" id="selectAll" name="selectAll" onclick="toggleBtn(this)">Check All</button>
+            <input type="checkbox" id="selectAll" name="selectAll" value="selectAll" onclick="toggle(this)">
+            <label for="chestPain">Select All</label><br>
+            <input type="checkbox" id="chestPain" name="symptoms" value="Chest Pain">
+            <label for="chestPain">Chest Pain</label><br>
+            <input type="checkbox" id="fever" name="symptoms" value="Fever">
+            <label for="fever">Fever</label><br>
+            <input type="checkbox" id="cough" name="symptoms" value="Cough">
+            <label for="cough">Cough</label><br>
+            <input type="checkbox" id="colds" name="symptoms" value="Colds">
+            <label for="colds">Colds</label><br>
+            <input type="checkbox" id="tiredness" name="symptoms" value="Tiredness">
+            <label for="tiredness">Tiredness</label><br>
+            <input type="checkbox" id="achePain" name="symptoms" value="Aches and Pains">
+            <label for="achePain">Aches and Pains</label><br>
+            <input type="checkbox" id="soreThroat" name="symptoms" value="Sore Throat">
+            <label for="soreThroat">Sore Throat</label><br>
+            <input type="checkbox" id="diarrhea" name="symptoms" value="Diarrhea">
+            <label for="diarrhea">Diarrhea</label><br>
+            <input type="checkbox" id="headache" name="symptoms" value="Headache">
+            <label for="headache">Headache</label><br>
+            <input type="checkbox" id="lost" name="symptoms" value="Loss of Taste or Smell">
+            <label for="lost">Loss of Taste or Smell</label><br>
+            <input type="checkbox" id="shortness" name="symptoms" value="Shortness of Breath">
+            <label for="shortness">Shortness of Breath</label><br>
+        </fieldset>
+        <button type="button" id="save" name="save">Save</button>
+        <div class="mb-3">
+            <label for="symptomList">List of Symptoms</label><br>
+            <textarea name="symptomList" id="symptomList" cols="50"></textarea>
+        </div>
+    </form> -->
+    <!-- <form>
+        <div class="mb-3">
+            <label for="" class="form-label">Select multiple Pets</label>
+            <select multiple class="form-control form-control-sm|lg" name="pets" id="pets">
+                <option name="animals" value="Dog">Dog</option>
+                <option name="animals" value="Cat">Cat</option>
+                <option name="animals" value="Rabbit">Rabbit</option>
+                <option name="animals" value="Parrot">Parrot</option>
+            </select>
+        </div>
+        <button type="submit" id="submit">Submit</button>
+    </form> -->
+
+    <script>
+        function confirm() {
+
+            let index = document.form.radio.value;
+            if (document.form.username.value == "" && document.form.password.value != "") {
+                document.form.username.style.borderColor = "red";
+                alert("Empty Username");
+                return false;
+            } 
+
+            else if (document.form.username.value !== "" && document.form.password.value == "") {
+                document.form.password.style.borderColor = "red";
+                alert("Empty Password");
+                return false;
+            } 
+
+            else if (document.form.username.value == "" || document.form.password.value == "") {
+                document.form.username.style.borderColor = "red";
+                document.form.password.style.borderColor = "red";
+                alert("Empty Form");
+                return false;
+            } 
+
+            else {
+
+                if (document.form.password.value.length <= 6) {
+                    alert(`Your Password Length is too Short: ${document.form.password.value.length} Password Input`);
+                    return false;
+                } 
+
+                else {
+
+                    if (document.form.acceptLabelCheckbox.checked == true) {
+                        alert(`Please accept the terms!`);
+                        return false;
+                    } 
+
+                    else {
+
+                        alert(`You are now Logged in, ${document.form.username.value}. Radio Button ${index} has been selected`);
+                        return true;
+                    }
+                }
+            }
+        }
+
+        // function getSymptoms() {
+        //     const checkboxes = document.querySelectorAll('input[name="symptoms"]:checked')
+        //     var symptoms = [];
+
+        //     checkboxes.forEach((checkbox) => {
+        //         symptoms.push(checkbox.value);
+        //     });
+
+        //     return symptoms;
+        // }
+
+        // const submit = document.querySelector('#save');
+        // submit.addEventListener('click', () => {
+
+        //     if (getSymptoms().length === 0) {
+        //         alert(`Wag sinungaling`);
+        //     } else {
+        //         alert(`Your symptoms are ${getSymptoms().join(', ')}. You need Efficacent.`);
+        //         document.getElementById("symptomList").innerHTML =
+        //             `Your symptoms are \n${getSymptoms().join(', \n')}. You need Efficacent.`;
+        //         document.getElementById("symptomList").style.fontSize = "50px"
+        //     }
+        // });
+
+        // // ==================================================== USING BUTTON
+        // var isChecked = true;
+
+        // function toggleBtn() {
+        //     var checkboxes = document.querySelectorAll('input[name="symptoms"]');
+            
+        //     if (isChecked) {
+        //         for (var i = 0; i < checkboxes.length; i++) {
+        //             console.log(i)
+        //             if (checkboxes[i].type == 'checkbox') {
+        //                 checkboxes[i].checked = true;
+        //             }
+        //         }
+        //     } else {
+        //         for (var i = 0; i < checkboxes.length; i++) {
+        //             if (checkboxes[i].type == 'checkbox') {
+        //                 checkboxes[i].checked = false;
+        //             }
+        //         }
+        //     }
+        //     isChecked = !isChecked;
+        // }
+
+        // // ==================================================== USING CHECKBOX
+        // function toggle(source) {
+        //     var checkboxes = document.querySelectorAll('input[name="symptoms"]');
+        //     for (var i = 0; i < checkboxes.length; i++) {
+        //         if (checkboxes[i] != source)
+        //             checkboxes[i].checked = source.checked;
+        //     }
+        // }
+
+        // ==============================================================================================================
+        // document.getElementById('submit').onclick = () => {
+        //     var selected = [];
+        //     for (var option of document.getElementById('pets').options) {
+        //         if (option.selected) {
+        //             selected.push(option.value);
+        //         }
+        //     }
+
+        //     if (selected.length == 0) {
+        //         alert(`Please Select`);
+        //         return false;
+        //     } else {
+        //         if (selected.length == 1) {
+        //             alert(`The pet you selected is ${selected}`);
+        //         } else {
+        //             alert(`The pets you selected are ${selected.join(", ")}.`);
+        //         }
+        //         return true;
+        //     }
+        // }
+
+        // ==============================================================================================================
+        // document.getElementById('submit').onclick = function () {
+        //     var checked = document.querySelectorAll('#pets :checked');
+        //     var selected = [...checked].map(option => option.value);
+
+        //     if (selected.length == 0) {
+        //         alert(`Please Select`);
+        //         return false;
+        //     } else {
+
+        //         if (selected.length == 1) {
+        //             alert(`The pet you selected is ${selected}`);
+        //         } else {
+        //             alert(`The pets you selected are ${selected.join(", ")}.`);
+        //         }
+        //         return true;
+        //     }
+        // }
+
+        // ==============================================================================================================
+        // document.getElementById('submit').onclick = function () {
+        //     var select = document.getElementById('pets');
+        //     var selected = [...select.selectedOptions].map(option => option.value);
+        //     if (selected.length == 0) {
+        //         alert(`Please Select`);
+        //         return false;
+        //     } else {
+
+        //         if (selected.length == 1) {
+        //             alert(`The pet you selected is ${selected}`);
+        //         } else {
+        //             alert(`The pets you selected are ${selected.join(", ")}.`);
+        //         }
+        //         return true;
+        //     }
+        // }
+
+        // ==============================================================================================================
+        // document.getElementById('submit').onclick = function () {
+        //     var select = document.getElementById('pets');
+        //     var selected = [...select.options].filter(option => option.selected).map(option => option.value);
+        //     if (selected.length == 0) {
+        //         alert(`Please Select`);
+        //         return false;
+        //     } else {
+
+        //         if (selected.length == 1) {
+        //             alert(`The pet you selected is ${selected}`);
+        //         } else {
+        //             alert(`The pets you selected are ${selected.join(", ")}.`);
+        //         }
+        //         return true;
+        //     }
+        // }
+
+        // ==============================================================================================================
+        // document.getElementById('submit').onclick = () => {
+        //     let x = Array.from(document.getElementById("pets").options).filter(option => option.selected).map(option =>option.value);
+
+        //     if (x.length == 0) {
+        //         alert(`Please Select`);
+        //         return false;
+        //     } else {
+
+        //         if (x.length == 1) {
+        //             alert(`The pet you selected is ${x}`);
+        //         } else {
+        //             alert(`The pets you selected are ${x.join(", ")}.`);
+        //         }
+        //         return true;
+        //     }
+        // }
+
+        // ==============================================================================================================
+    </script>
+</body>
+
+</html>

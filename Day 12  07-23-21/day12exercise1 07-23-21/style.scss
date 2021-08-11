@@ -1,4 +1,4 @@
-$b-width: 5px;
+$b-width: 1px;
 $b-color: black;
 $bg-color: lightgray;
 $font-color: black;
@@ -42,7 +42,7 @@ nav {
     div:first-child {
         background-color: white;
         height: 50%;
-        width: 300px;
+        max-width: 300px;
         @include border-primary;
         @include displayCenter-flex;
         

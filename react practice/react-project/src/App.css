@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto";
+  color: red;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh/3);
+}
+
+main:nth-child(odd) {
+  background: yellow;
+}

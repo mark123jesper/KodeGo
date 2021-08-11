@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- These are event samples -->
+    <form>
+        <input type="button" onclick="alert('Good Morning!')" value="Click to Greet">
+        <input type="button" onclick="clickEvent()" value="Click Me Please OWO">
+        <input type="button" onclick="getDate()" value="Click to Get Time">
+    </form>
+    <script>
+        function clickEvent() {
+            alert("You Clicked Me OWO");
+        }
+
+        function getDate() {
+            var today = new Date(today).toUTCString();
+            today = today.split(' ').slice(0, 4).join(' ');
+            // var date = today.getFullYear() + '-' + (today.getMonth() + 1 < 10 ? `0${today.getMonth()+1}` : today
+            //     .getMonth() + 1) + '-' + today.getDate();
+            // var time = (today.getHours() < 10 ? `0${today.getHours()}` : today.getHours()) + ":" + (today.getMinutes() <
+            //     10 ? `0${today.getMinutes()}` : today.getMinutes()) + ":" + (today.getSeconds() < 10 ?
+            //     `0${today.getSeconds()}` : today.getSeconds());
+            var hourTime = today.getHours();
+            var greeting;
+            // IF-Else Statement
+
+            if (hourTime >= 00 && hourTime <= 10) {
+                greeting = 'Good Morning';
+            } else if (hourTime >= 11 && hourTime <= 18) {
+                greeting = 'Good Afternoon';
+            } else if (hourTime >= 19 && hourTime <= 24) {
+                greeting = "Good Evening";
+            }
+
+            alert(`${greeting}! the Date today is ${today} and the time is .`);
+            document.write(`${greeting}! the Date today is ${today} and the time is .`)
+        }
+
+        var ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+
+    </script>
+</body>
+
+</html>

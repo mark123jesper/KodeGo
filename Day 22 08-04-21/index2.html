@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" onclick="displayBooks()">Display List of Books</button>
+</body>
+<script>
+    const timeSpan = Date.now();
+
+    function Library(libraryId, bookName, author, yearPublished, isRead) {
+        this.libraryId = libraryId;
+        this.bookName = bookName;
+        this.author = author;
+        this.yearPublished = yearPublished;
+        this.isRead = isRead;
+        this.displayList = function () {
+                return (
+                    `<li>ID:${this.libraryId} <b>${this.bookName}</b> by <i>${this.author}</i> published on ${this.yearPublished}</li><hr>`
+                    )
+            },
+            this.haveRead = function () {
+                return (`<li>I have read <b>${this.bookName}</b>.</li>`)
+            },
+            this.haventRead = function () {
+                return (`<li>I have not read <b>${this.bookName}</b>.</li>`)
+            };
+    };
+
+
+    let book1 = new Library(timeSpan, `Real Men are Pogi`, `Ardy Roberto`, 2000, true);
+    let book2 = new Library(timeSpan, `The Design of Everyday Things`, `Don Norman`, 1900, false);
+    let book3 = new Library(timeSpan, `Steve Jobs`, `Walter Isaacson`, 2001, true);
+    let book4 = new Library(timeSpan, `Mockingjay`, `Suzanne Collins`, 2015, false);
+    let book5 = new Library(timeSpan, `The Hobbit`, `JRR Tolkien`, 2001, true);
+
+    var books = [book1, book2, book3, book4, book5];
+
+    var listBooks = books.sort(function (a, b) {
+        if (a.author < b.author) {
+            return -1;
+        }
+
+        if (b.author < a.author) {
+            return 1;
+        }
+        return 0;
+    });
+
+    function displayBooks() {
+
+        for (const element of books) {
+            document.write(element.displayList());
+        }
+
+        for (let i in books) {
+            
+            if (books[i].isRead === true) {
+                document.write(`${books[i].haveRead()}`);
+            }
+        }
+
+        for (let i in books) {
+            
+            if (books[i].isRead !== true) {
+                document.write(`${books[i].haventRead()}`);
+            }
+        }
+
+        
+    }
+</script>
+
+</html>

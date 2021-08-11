@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="recipe"></h1>
+    <h2 id="view"></h2>
+    <h2 id="ing"></h2>
+    <script>
+        function Employee(id, fName, lName, salary) {
+            this.id = id;
+            this.fName = fName;
+            this.lName = lName;
+            this.salary = salary;
+        }
+
+        e = new Employee(101,"Juan","Cruz",40000);
+        console.log(e);
+        document.write(`${e.id} ${e.fName} ${e.lName}'s Salary is ${e.salary}`);
+    
+        const recipe = {
+            title:"Adobo", 
+            delicacy:"Filipino", 
+            servings:"30 Person", 
+            ingredients:["pork", "paminta", "toyo", "suka", "laurel"]
+        };
+        document.getElementById("recipe").innerHTML = (`The ulam is ${recipe.title}`);
+        document.getElementById("view").innerHTML = (`The serving is ${recipe.servings}`);
+        document.getElementById("ing").innerHTML = (`The recipe is ${recipe.ingredients}`);
+
+        for (x = 0; x < recipe.ingredients.length; x++) {
+            document.write(`<br>${x+1}. ${recipe.ingredients[x]}<br>`)
+        }
+
+        
+    </script>
+</body>
+</html>

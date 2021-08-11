@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>My First Javascript</h1>
+
+    <script>
+        // VARIABLES
+        // var birthplace = "Laguna", person = "Jose Rizal", age = "24";
+        // document.write("<h2><strong>" + birthplace + "</strong></h2>");
+        // document.write("<h2><strong>" + age + "</strong></h2>");
+        // document.write("<h2><strong>" + person + "</strong></h2>");
+        // document.write(`<h2>Name: ${person}</h2>`);
+        // document.write(`<h2>Age: ${age}</h2>`);
+        // document.write(`<h2>Birthplace: ${birthplace}</h2>`);
+
+        // LET DECLARATION
+        var city = "Manila";
+        function showCity(){
+            let city = "Malabon";
+            console.log(city);
+        }
+        showCity();
+        console.log(city);
+
+        // Constant
+        // const car = {type: "Honda", model: "sedan", color: "blue", mileage:"15k"};
+        // car.owner = "Mark";
+        // document.write(`<h2>${car.type}'s Car owner is ${car.owner}.</h2>`);
+
+        // IF-Else Statement
+        // var hourOfDay;
+        // var greeting;
+        // hourOfDay = prompt("Input 2-digit 24-hour format of time");
+
+        // if (undefined) {
+        //     greeting = "Put a Time";
+        // }
+
+        // else if (hourOfDay >= 00 && hourOfDay <= 10) {
+        //     greeting = 'Good Morning';
+        // } 
+        
+        // else if (hourOfDay >= 11 && hourOfDay <= 18) {
+        //     greeting = 'Good Afternoon';
+        // }
+        
+        // else if (hourOfDay >= 19 && hourOfDay <= 24) {
+        //     greeting = "Good Evening";
+        // }
+
+        // else {
+        //     greeting = "Not a Time";
+        // }
+
+        // alert(greeting);
+
+        // Switch Statement
+        var animal;
+        animal = prompt("Input an animal from the option: Cat, Dog, Cow, Dinosaur");
+
+        switch (animal) {
+            case "Cat":
+            case "Dog":
+            case "Cow":
+            case "cat":
+            case "dog":
+            case "cow":
+                alert("This animal is not extinct");
+                break;
+            
+            case "Dinosaur":
+            case "dinosaur":
+                alert("This animal is extinct");
+                break;
+
+            default:
+                alert("Choose the correct animal");
+                break;
+        }
+
+        console.log 
+    </script>
+</body>
+</html>

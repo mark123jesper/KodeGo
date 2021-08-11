@@ -1,0 +1,146 @@
+.wrap p {
+  margin: 10px;
+  padding: 10px;
+}
+
+.p-border {
+  border: dotted 3px blue;
+}
+
+.p-background {
+  background: rgba(0, 0, 255, 0.3);
+}
+
+.p-color {
+  color: blue;
+}
+
+body {
+  background: lightblue;
+  font: Arial;
+}
+
+.header {
+  color: darkblue;
+}
+
+.sample-nest p {
+  background: lightgrey;
+}
+
+.sample-nest p a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+}
+
+.sample-nest p a:hover {
+  text-decoration: underline;
+}
+
+.sample-nest table {
+  border: 2px solid darkblue;
+  width: 100%;
+}
+
+.sample-nest table tr:nth-child(2n) {
+  background-color: lightgreen;
+  padding: 6px 6px;
+}
+
+.sample-nest table th {
+  font: Arial;
+  color: darkblue;
+  font-size: large;
+}
+
+nav ul {
+  list-style: none;
+  margin: 1px;
+  padding: 1px;
+  border: 2px solid lightsalmon;
+  background-color: lightgreen;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+nav li {
+  float: left;
+  border-right: 2px solid darkblue;
+}
+
+nav li:hover {
+  background-color: lightgrey;
+}
+
+nav a {
+  display: block;
+  padding: 8px 10px;
+  text-decoration: underline;
+}
+
+nav a:hover {
+  color: coral;
+  text-decoration: line-through;
+}
+
+.headlineNews1 {
+  color: green;
+  font-size: 3em;
+}
+
+.headlineNews2 {
+  color: blue;
+  font-size: 3em;
+}
+
+.headlineNews3 {
+  color: red;
+  font-size: 3em;
+}
+
+.box1 {
+  border: 5px solid red;
+  border-radius: 50%;
+}
+
+.box2 {
+  border: thick dotted blue;
+  border-radius: 50%;
+}
+
+.boxlight {
+  width: 150px;
+  height: 150px;
+  background-color: red;
+  border: 1px solid black;
+}
+
+.boxmedium {
+  width: 150px;
+  height: 150px;
+  background-color: yellow;
+  border: 3px solid black;
+}
+
+.boxheavy {
+  width: 150px;
+  height: 150px;
+  background-color: cyan;
+  border: 6px solid black;
+}
+
+.coloring.good {
+  background-color: pink;
+}
+
+.coloring.bad {
+  background-color: red;
+}
+
+.coloring.neutral {
+  background-color: orange;
+}
+
+/*# sourceMappingURL=style.css.map */

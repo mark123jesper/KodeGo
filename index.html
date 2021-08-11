@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning DOM</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <input id="secretMission" type="button" value="Secret Mission">
+
+    <div id="hidden" class="hidden">
+        <input type="button" onclick="insert_row(); highlightLongWords(); removeQuestionmark(); removeExclamation()"
+            value="Insert Row">
+        <table id="sampleTable" border="1">
+            <tr id="row1">
+                <td id=cell1>Row 1 Cell 1</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    $("#secretMission").on("click", () => {
+        $("#hidden").removeClass("hidden");
+        $("#secretMission").addClass("hidden");
+    });
+
+    function insert_row() {
+        // REPLACING ROW 1 CONTEXT
+        var para = document.createElement("td");
+        var node = document.createTextNode(
+            "Secret Mission? What Plans? What are you talking about? I'm not getting there!")
+        para.appendChild(node);
+
+        var rowParent = document.getElementById('row1');
+        var cellChild = document.getElementById('cell1');
+        rowParent.replaceChild(para, cellChild);
+
+        // ADDING NEW ROW
+        var table = document.getElementById('sampleTable');
+        var newRow = table.insertRow(1);
+        var cell2 = newRow.insertCell(0);
+        cell2.innerHTML =
+            "Are you sure this things safe? close up formation You'd better let her loose Almost there! I can't hold them! It's away It's a hit Negative."
+
+        table.style.fontSize = "60px";
+        table.style.fontFamily = "monospace";
+        table.style.color = "red";
+    }
+
+    // =========================================
+
+    function highlightLongWords() {
+        let element = document.getElementById("sampleTable");
+        let longestWord = 7;
+        const words = element.textContent.split(" ");
+
+        for (let i = 0; i < words.length; i++) {
+
+            if (words[i].length > longestWord) {
+
+                element.innerHTML = element.innerHTML.replace(words[i], `<mark>${words[i]}</mark>`)
+            }
+        }
+        return;
+    }
+
+    // =========================================
+    function removeQuestionmark() {
+        let str = document.getElementById("sampleTable").innerHTML;
+        document.getElementById("sampleTable").innerHTML = str.replace(/\?/g, "😀");
+    }
+
+    function removeExclamation() {
+        let str = document.getElementById("sampleTable").innerHTML;
+        document.getElementById("sampleTable").innerHTML = str.replace(/\!/g, "😲");
+    }
+</script>
+
+</html>
