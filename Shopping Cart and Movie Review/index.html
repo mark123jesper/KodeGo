@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mark Jesper Pillerva">
+    <meta name="keywords" content="Healthcare, Healthcare Registration">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--META PORTION-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <!--Bootstrap core Script-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Bootstrap core CSS-->
+    <title>Movie Review</title>
+    <!--TAB TITLE-->
+</head>
+
+<body>
+    <div class="container">
+        <form class="container">
+            <div class="row my-3">
+                <label for="productName" class="form-label">Product Name</label>
+                <input type="text" class="form-control w-50" name="productName" id="productName"
+                    placeholder="Place product name">
+            </div>
+
+            <div class="row mb-3">
+                <label for="productPrice" class="form-label">Price</label>
+                <input type="number" class="form-control w-50" name="productPrice" id="productPrice"
+                    placeholder="Place price without currency symbol">
+            </div>
+
+            <div class="row mb-3">
+                <label for="productPrice" class="form-label">Quantity</label>
+                <input type="number" class="form-control w-50" name="productQuantity" id="productQuantity"
+                    placeholder="" value="1">
+            </div>
+
+            <div class="row mb-3">
+                <button type="submit" name="checkout" id="checkout" class="btn btn-success w-25" href="#"
+                    role="button">Submit Products</button>
+            </div>
+            <div class="row mb-3">
+                <button type="submit" name="checkoutTotal" id="checkoutTotal" class="btn btn-success w-25" href="#"
+                    role="button">Checkout</button>
+            </div>
+        </form>
+
+        <table class="table" id="checkoutTable" name="table">
+            <tr class="text-start">
+                <th class="text-start col-md-2">Grand Total</th>
+                <td id="totalValue"></td>
+            </tr>
+            <tr class="text-start">
+                <th>Order ID</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+<script>
+    var cart = [];
+    const addProduct = (event) => {
+        event.preventDefault();
+        let product = {
+            ID: Date.now(),
+            Name: document.getElementById('productName').value,
+            Price: document.getElementById('productPrice').value,
+            Quantity: document.getElementById('productQuantity').value,
+        }
+        cart.push(product);
+
+        // Resetting the form after submitting
+        document.querySelector('form').reset();
+
+        localStorage.setItem(`cart`, JSON.stringify(cart));
+
+        let arr1 = new Array();
+
+        arr1 = JSON.parse(localStorage.getItem("cart"));
+
+        let table = document.getElementById('checkoutTable');
+        let grandT = document.getElementById('totalValue');
+        var total = 0;
+
+        // adding row and data cells
+        let row1 = table.insertRow();
+        let cell11 = row1.insertCell();
+        cell11.setAttribute('class', "col-lg-3");
+        let cell12 = row1.insertCell();
+        cell12.setAttribute('class', "col-lg-3");
+        let cell13 = row1.insertCell();
+        cell13.setAttribute('class', "col-lg-3");
+        let cell14 = row1.insertCell();
+        cell14.setAttribute('class', "col-lg-3");
+        let cell15 = row1.insertCell();
+        cell15.setAttribute('class', "col-lg-3");
+
+        for (let i in arr1) {
+            // Setting values on each cell
+            cell11.innerHTML = 'ID' + arr1[i].ID;
+            if (Number.isNaN(arr1.Price) || arr1.Price === "" || arr1[i].Name === "") {
+                cell12.innerHTML = "";
+                cell13.innerHTML = "";
+                cell14.innerHTML = ""
+                cell15.innerHTML = "";
+            } else {
+                cell12.innerHTML = arr1[i].Name;
+                cell13.innerHTML = '₱' + (parseFloat(arr1[i].Price)).toLocaleString();
+                cell14.innerHTML = arr1[i].Quantity;
+                cell15.innerHTML = '₱' + (parseFloat(arr1[i].Price) * parseFloat(arr1[i].Quantity))
+                    .toLocaleString();
+                total += parseFloat(arr1[i].Price) * parseFloat(arr1[i].Quantity);
+                grandT.innerHTML = '₱' + total.toLocaleString();
+            }
+        }
+    };
+
+    function generateMovieReview() {
+        // Clearing the storage and array length after generating to prevent repeated generation
+        localStorage.clear();
+        cart.length = 0;
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('checkout').addEventListener('click', addProduct);
+        document.getElementById('checkoutTotal').addEventListener('click', generateMovieReview);
+    });
+</script>
+
+</html>

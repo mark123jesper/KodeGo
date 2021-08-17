@@ -1,10 +1,10 @@
 const Footer = () => {
 
     return (
-        <main>
-            <h1>FOOTER</h1>
-        </main>
+        <footer className='row text-center bg-success'>
+			<h1>Footer</h1>
+		</footer>
     );
 }
 
-export default Footer;
+export default Footer;  

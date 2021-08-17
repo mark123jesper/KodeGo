@@ -2,16 +2,14 @@
   margin: 0;
   padding: 0;
   font-family: "Roboto";
-  color: red;
+  color: black;
 }
+
 
 main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: calc(100vh/3);
+  height: 70%;
 }
 
-main:nth-child(odd) {
-  background: yellow;
+header, footer {
+  height: 15%;
 }

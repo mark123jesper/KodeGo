@@ -1,10 +1,11 @@
-const Header = () => {
+import React from 'react';
 
-    return (
-        <main>
-            <h1>HEADER</h1>
-        </main>
-    );
-}
+const Header = () => {
+	return (
+		<header className='row text-center bg-success'>
+			<h1>Header</h1>
+		</header>
+	);
+};
 
 export default Header;

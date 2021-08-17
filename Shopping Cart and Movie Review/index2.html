@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Mark Jesper Pillerva">
+    <meta name="keywords" content="Healthcare, Healthcare Registration">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--META PORTION-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
+    <!--Bootstrap core Script-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!--Bootstrap core CSS-->
+    <title>Movie Review</title>
+    <!--TAB TITLE-->
+</head>
+
+<body>
+    <div class="container">
+        <form>
+            <div class="row mb-3">
+                <div class="mb-3">
+                    <label for="movieName" class="form-label">Movie Name</label>
+                    <input type="text" class="form-control" name="movieName" id="movieName" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+
+            <div class="row my-3">
+                <div>
+                    <label for="movieYear" class="form-label">Movie Year</label>
+                    <input type="text" class="form-control" name="movieYear" id="movieYear" aria-describedby="helpId"
+                        placeholder="">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class>
+                    <div class="mb-3">
+                        <label for="movieReview" class="form-label">Movie Review</label>
+                        <textarea class="form-control" name="movieReview" id="movieReview" rows="3"></textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" name="movieBtn" id="movieBtn" class="btn btn-success" href="#"
+                    role="button">Submit
+                    Review</button>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" name="movieBtn" id="generateBtn" class="btn btn-success" href="#"
+                    role="button">Generate Report</button>
+            </div>
+        </form>
+
+        <div id="movieDisplay">
+        </div>
+
+        <table class="table" id="movieTable" name="table">
+            <tr>
+                <th>ID</th>
+                <th>Movie Name</th>
+                <th>Movie Year</th>
+                <th>Movie Reviews</th>
+            </tr>
+        </table>
+
+    </div>
+</body>
+
+<script>
+    let movieReviews = [];
+    const addMovieReview = (event) => {
+        event.preventDefault();
+
+        let movieReview = {
+            ID: Date.now(),
+            Name: document.getElementById('movieName').value,
+            Year: document.getElementById('movieYear').value,
+            Review: document.getElementById('movieReview').value,
+        }
+
+        movieReviews.push(movieReview);
+        document.querySelector('form').reset();
+        console.table(movieReviews);
+
+        let movieDisplay = document.querySelector('#movieDisplay');
+        movieDisplay.innerHTML = JSON.stringify(movieReviews, null, 5);
+        localStorage.setItem(`movieReviews`, JSON.stringify(movieReviews));
+    };
+
+    document.addEventListener('DOMContentLoaded', () => {
+        document.getElementById('movieBtn').addEventListener('click', addMovieReview);
+
+        document.getElementById('generateBtn').addEventListener('click', generateMovieReview);
+    });
+
+    
+
+    function generateMovieReview(event) {
+        event.preventDefault();
+        
+        let arr1 = new Array();
+
+        arr1 = JSON.parse(localStorage.getItem("movieReviews"))
+
+        let table = document.getElementById('movieTable');
+        for (let i = 0; i < arr1.length; i++) {
+            // adding row and data cells
+            // let row = table.insertRow();
+            // let cell1 = row.insertCell();
+            // let cell2 = row.insertCell();
+            // let cell3 = row.insertCell();
+            // let cell4 = row.insertCell();
+
+            // or
+
+            let row = document.createElement("tr");
+            table.appendChild(row);
+
+            let cell1 = document.createElement("td");
+            row.appendChild(cell1);
+
+            let cell2 = document.createElement("td");
+            row.appendChild(cell2);
+
+            let cell3 = document.createElement("td");
+            row.appendChild(cell3);
+
+            let cell4 = document.createElement("td");
+            row.appendChild(cell4);
+
+            // Setting values on each cell
+            cell1.innerHTML = arr1[i].ID;
+            cell2.innerHTML = arr1[i].Name;
+            cell3.innerHTML = arr1[i].Year;
+            cell4.innerHTML = arr1[i].Review;
+
+        }
+        // Clearing the storage and array length after generating to prevent repeated generation
+        localStorage.clear();
+        movieReviews.length = 0;
+    }
+</script>
+
+</html>
